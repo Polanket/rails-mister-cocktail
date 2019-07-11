@@ -1,7 +1,7 @@
 <h1><%= @cocktail.name %></h1>
 <ul class='list-group'>
- <% @cocktail.ingredients.each do |ingredient| %>
- <li class='list-group-item'><%=ingredient.name %></li>
+ <% @cocktail.doses.each do |dose| %>
+ <li class='list-group-item'><%="#{dose.description} - #{dose.ingredient.name}" %></li>
  <% end %>
 </ul>
 <%= render './doses/form' %>
