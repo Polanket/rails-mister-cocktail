@@ -8,8 +8,11 @@ class DosesController < ApplicationController
     @dose.cocktail = cocktail
     @dose.ingredient = ingredient
 
-    @dose.save
-    redirect_to cocktail_path(cocktail)
+    if @dose.save
+      redirect_to cocktail_path(cocktail)
+    else
+      render "cocktails/show"
+    end
   end
 
   def destroy
