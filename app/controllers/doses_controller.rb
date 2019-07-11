@@ -13,8 +13,7 @@ class DosesController < ApplicationController
     @dose.ingredient = ingredient
 
     @dose.save
-
-    redirect_to cocktails_path
+    redirect_to cocktail_path(cocktail)
   end
 
   def destroy
