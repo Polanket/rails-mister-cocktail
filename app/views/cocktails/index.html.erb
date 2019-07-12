@@ -1,9 +1,17 @@
-<%= link_to 'Add Cocktail', new_cocktail_path %>
-<div class="d-flex flex-wrap">
+<div class="cards">
   <% @cocktails.each do |cocktail| %>
-    <div class="card">
-      <h1><%=link_to cocktail.name, cocktail_path(cocktail) %></h1>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path cocktail.photo, height: 200, width: 200, crop: :fill unless cocktail.photo.blank? %>')">
+      <%=link_to cocktail.name, cocktail_path(cocktail) %>
     </div>
   <% end %>
-
 </div>
+
+<!-- <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div> -->
