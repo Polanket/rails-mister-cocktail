@@ -46,6 +46,8 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
+gem 'cloudinary', '~> 1.9.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
