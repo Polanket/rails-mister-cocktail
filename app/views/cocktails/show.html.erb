@@ -4,7 +4,12 @@
    <% @cocktail.doses.each do |dose| %>
    <li class='list-group-item'><%="#{dose.description} - #{dose.ingredient.name}" %></li>
    <% end %>
- </ul>
+  </ul>
+   <div class="container">
+     <%= link_to 'Edit Cocktail', edit_cocktail_path(@cocktail), class:'btn btn-warning' %>
+     <%= link_to 'Delete Cocktail', cocktail_path(@cocktail), method: :delete, class:'btn btn-danger' %>
+   </div>
+
  <%= render './doses/form' %>
 </div>
 

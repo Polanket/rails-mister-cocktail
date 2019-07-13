@@ -13,8 +13,11 @@
   </head>
 
   <body>
-    <%= link_to 'Add Cocktail', new_cocktail_path %>
-    <div class="container">
+    <nav class="navbar navbar-light bg-light">
+      <%= link_to 'Cocktails', cocktails_path, class:"navbar-brand mb-0 h1"%>
+      <%= link_to 'Add Cocktail', new_cocktail_path, class:"btn btn-primary" %>
+    </nav>
+    <div class="d-flex justify-content-around">
       <%= yield %>
     </div>
 
