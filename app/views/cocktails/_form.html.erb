@@ -1,0 +1,18 @@
+<%= simple_form_for(@cocktail) do |f| %>
+  <% if @cocktail.errors.any? %>
+    <div class="errors-container">
+      <% @cocktail.errors.full_messages.each do |message| %>
+        <div class="flash flash-danger alert alert-dismissible fade show" role="alert">
+          <span><strong>Oops!</strong> 😱 <%= message %></span>
+          <a data-dismiss="alert" aria-label="Close">
+            <i class="fas fa-times"></i>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <%= f.input :name %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.button :submit, class:"btn btn-primary" %>
+<% end %>
